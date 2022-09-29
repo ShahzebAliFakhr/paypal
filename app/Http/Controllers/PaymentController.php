@@ -41,9 +41,15 @@ class PaymentController extends Controller
                     'amount' => $request->input('amount'),
                     'items' => [
                         [
-                            'name' => 'Course Subscription',
-                            'price' => $request->input('amount'),
-                            'description' => 'Get access to premium courses.',
+                            'name' => 'HP Laptop Pavilion',
+                            'price' => $request->input('amount') / 2,
+                            'description' => 'Buy HP Laptop Pavilion from abc.com',
+                            'quantity' => 1
+                        ],
+                        [
+                            'name' => 'Samsung A71',
+                            'price' => $request->input('amount') / 2,
+                            'description' => 'Buy Samsung A71 from abc.com',
                             'quantity' => 1
                         ],
                     ],
