@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\GoogleDriveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,9 @@ Route::get('payment', [PaymentController::class, 'index']);
 Route::post('payment/charge', [PaymentController::class, 'charge']);
 Route::get('payment/success', [PaymentController::class, 'success']);
 Route::get('payment/error', [PaymentController::class, 'error']);
+
+// Google Drive Upload
+Route::get('google/login', [GoogleDriveController::class, 'login']);
+Route::get('google/upload', [GoogleDriveController::class, 'upload']);
 
 
