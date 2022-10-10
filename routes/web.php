@@ -27,7 +27,8 @@ Route::get('payment/success', [PaymentController::class, 'success']);
 Route::get('payment/error', [PaymentController::class, 'error']);
 
 // Google Drive Upload
+Route::get('google', [GoogleDriveController::class, 'index']);
 Route::get('google/login', [GoogleDriveController::class, 'login']);
-Route::get('google/upload', [GoogleDriveController::class, 'upload']);
+Route::post('google/upload', [GoogleDriveController::class, 'upload']);
 
 
