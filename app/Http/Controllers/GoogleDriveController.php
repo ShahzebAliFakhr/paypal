@@ -47,7 +47,7 @@ class GoogleDriveController extends Controller
             $user = User::find(1);
             $user->access_token = json_encode($request->session()->get('token'));
             $user->save();
-            dd("Successfully Authenticated");
+            dd('User Authenticated');
         }else{
             $authUrl = $this->client->createAuthUrl();
             return redirect()->to($authUrl);
