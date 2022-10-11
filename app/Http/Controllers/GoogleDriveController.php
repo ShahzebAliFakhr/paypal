@@ -18,7 +18,9 @@ class GoogleDriveController extends Controller
         $this->gClient->setDeveloperKey(env('GOOGLE_API_KEY'));
         $this->gClient->setScopes(array(               
             'https://www.googleapis.com/auth/drive.file',
-            'https://www.googleapis.com/auth/drive'
+            'https://www.googleapis.com/auth/drive',
+            // 'https://www.googleapis.com/auth/userinfo.email',
+            // 'https://www.googleapis.com/auth/userinfo.profile'
         ));
         $this->gClient->setAccessType("offline");
         $this->gClient->setApprovalPrompt("force");
@@ -56,8 +58,9 @@ class GoogleDriveController extends Controller
     }
     public function upload(Request $request){
         $service = new \Google_Service_Drive($this->gClient);
-        $user=User::find(1);
+        $user = User::find(1);
         $this->gClient->setAccessToken(json_decode($user->access_token,true));
+
         if ($this->gClient->isAccessTokenExpired()){
             // save refresh token to some variable
             $refreshTokenSaved = $this->gClient->getRefreshToken();
@@ -74,6 +77,9 @@ class GoogleDriveController extends Controller
             $user->save();                
         }
 
+
+        $folderName = 'Images';
+        $mainfolderId = '1ejOHGDDKBoyTZH4-g-c_S7vWO-u2iEh4';
         $folders = $service->files->listFiles(array("q" => "name='{$folderName}' and '{$mainfolderId}' in parents and mimeType='application/vnd.google-apps.folder'"));
         
         if (count($folders->getFiles()) == 0) {
