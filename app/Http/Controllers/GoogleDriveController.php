@@ -12,7 +12,7 @@ class GoogleDriveController extends Controller
     public function __construct(){
         $google_redirect_url = url('google/login');
         $this->client = new \Google_Client();
-        $this->client->setApplicationName('TNI Digital');
+        $this->client->setApplicationName('BackOffice');
         $this->client->setClientId(env('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(env('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri($google_redirect_url);
