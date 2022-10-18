@@ -31,4 +31,10 @@ Route::get('google', [GoogleDriveController::class, 'index']);
 Route::get('google/login', [GoogleDriveController::class, 'login']);
 Route::post('google/upload', [GoogleDriveController::class, 'upload']);
 
+// Backup
+Route::get('backup/run', function(){
+    \Artisan::call('backup:run');
+    dd('Backup Successfull.');
+});
+
 
