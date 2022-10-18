@@ -33,7 +33,7 @@ Route::post('google/upload', [GoogleDriveController::class, 'upload']);
 
 // Backup
 Route::get('backup/run', function(){
-    \Artisan::call('backup:run');
+    \Artisan::call('backup:run --only-db --disable-notifications');
     dd('Backup Successfull.');
 });
 
