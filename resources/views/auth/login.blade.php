@@ -51,17 +51,10 @@
                     {{ __('Log in') }}
                 </x-button>
             </div>
-            <div style="width: 100%; display: block; margin-top: 20px;">
-                <div style="width: 49%; display: inline-block; padding: 3px; background-color: #000; border: 1px solid #000; color: #fff; text-align: center;">
-                    <a href="{{ url('auth/apple') }}" style="width: 100%; padding: 10px;">
-                        LOGIN WITH APPLE
-                    </a>
-                </div>
-                <div style="width: 49%; display: inline-block; padding: 3px; border: 1px solid #000; text-align: center;">
-                    <a href="{{ url('auth/google') }}" style="width: 100%; padding: 10px;">
-                        LOGIN WITH GOOGLE
-                    </a>
-                </div>
+            <div style="width: 100%; display: block; padding: 3px; background-color: #fff; border: 1px solid #000; color: #000; text-align: center; margin-top: 20px;">
+                <a href="{{ url('auth/google') }}" style="width: 100%; padding: 10px;">
+                    LOGIN WITH GOOGLE
+                </a>
             </div>
         </form>
     </x-auth-card>

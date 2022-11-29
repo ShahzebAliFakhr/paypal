@@ -33,13 +33,7 @@ return [
     'google' => [
         'client_id' => '387865767463-c4r8m8msn2dgkb8jau2ir8vlem7g8odl.apps.googleusercontent.com',
         'client_secret' => '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',
-        'redirect' => url('auth/google/callback'),
-    ],
-
-    'apple' => [
-      'client_id' => env('APPLE_CLIENT_ID'),
-      'client_secret' => env('APPLE_CLIENT_SECRET'),
-      'redirect' => url('auth/apple/callback'),
+        'redirect' => 'https://localhost/sample/public/auth/google/callback',
     ],
 
 ];
