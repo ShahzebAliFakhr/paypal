@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\GoogleDriveController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\AppleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
