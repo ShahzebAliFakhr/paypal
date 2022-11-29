@@ -37,11 +37,9 @@ return [
     ],
 
     'apple' => [
-        'client_id' => env('APPLE_CLIENT_ID'),
-        'client_secret' => env('APPLE_CLIENT_SECRET'),
-        'team_id' => env('APPLE_TEAM_ID'),
-        'key_id' => env('APPLE_KEY_ID'),
-        'private_key' => env('APPLE_PRIVATE_KEY'),
+      'client_id' => env('APPLE_CLIENT_ID'),
+      'client_secret' => env('APPLE_CLIENT_SECRET'),
+      'redirect' => url('auth/apple/callback'),
     ],
 
 ];
