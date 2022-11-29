@@ -24,8 +24,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+// Login with Google
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+// Login with Apple
+Route::get('auth/apple', [AppleController::class, 'redirectToApple']);
+Route::get('auth/apple/callback', [AppleController::class, 'handleAppleCallback']);
 
 // Paypal Payment
 Route::get('payment', [PaymentController::class, 'index']);
